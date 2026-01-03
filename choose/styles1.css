@@ -1,0 +1,401 @@
+*{
+    margin: 0;
+    padding: 0;
+}  
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --accent-color: rgb(206, 73, 206);
+    --base-color: wheat;
+    --text-color:black;
+    --input-color:rgb(207, 205, 205);
+}
+
+html{
+    font-size: 12pt;
+    text-align: center;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(#04131be0, #100325cc, rgba(14, 13, 13, 0.815));
+    background-size: cover;
+    background-position: right;
+    overflow: hidden;
+    transition: background 0.5s ease;
+
+}
+
+/*app name styling*/
+.app-name-container{
+    position:absolute;
+    top: 80px;
+    left: 50%;
+    transform: translate(-50%);
+
+}
+.app-name{
+    font-family: "Akaya Telivigala", system-ui;
+    color:rgba(198, 216, 210, 0.925);
+    font-size: 3em
+}
+.hammer-open-page{
+    position: absolute;
+    top: 300px;
+    left: 15%;
+    transform: translate(-50%, -50%); 
+    height: auto;
+    max-height: 70vh;
+    width:60vw;
+    opacity: 0.3;
+    pointer-events: none;
+    animation: moveHammer 4s ease-in-out infinite;
+}
+@keyframes moveHammer{
+    0%{transform: translate(-50%, -50%) translateY(0px) rotate(-15deg);}
+    250%{transform: translate(-50%, -50%) translateY(-5px)rotate(10deg);}
+    50%{transform: translate(-50%, -50%) rotate(-10deg);}
+    75%{transform: translate(-50%, -50%) rotate(-5deg);}
+    100%{transform: translate(-50%, -50%) rotate(-15deg);}
+}
+.app-name-form{
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    font-size: 2em;
+    transform: translate(-50%);
+    color: rgb(233, 169, 201);
+    animation: upDown 2s ease-in-out infinite;
+}
+@keyframes upDown {
+    0%{transform: translateY(0) translateX(-50%);}
+    25%{transform: translateX(-58%) translateY(15px);}
+    60%{transform: translateY(0px) translateX(-50%);}
+    100%{transform: translateY(0) translateX(-50%);}
+}
+.app-name-divForm{
+    position: relative;
+    display: inline-block;
+}
+.hammer-form-page{
+    position: absolute;
+    top: -80px;
+    left: 85px;
+    height: 2em;
+    animation: hammering 2s ease-in-out infinite;
+}
+@keyframes hammering{
+    0%{transform: rotate(-15deg);}
+    50%{transform: rotate(10deg);}
+    75%{transform: rotate(200deg);}
+
+}
+/*opening buttons*/
+#choose-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.artisan-room-btn, .service-btn{
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    border: none;
+    border-radius: 12px;
+    background-color: rgba(238, 235, 235, 0.219);
+    font-size: 17px;
+    font-style:oblique;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 25em;
+    height: 5em;
+}
+.artisan-room-btn{
+    color: rgb(228, 220, 220)
+}
+.service-btn{   
+    background-color: #37698562;
+    color: rgb(228, 220, 220);
+}
+.question-mark{
+    font-size: 22pt;
+    padding: 5px;
+}
+.question-hidden{
+color:rgb(238, 235, 235);;
+}
+
+/*inputs styles*/
+#form-div{
+    display: flex;
+    justify-items: center;
+    margin-bottom: 0.5rem;  
+    margin-top:  1rem
+}
+
+#form-div input, .loginDiv input{
+width: 100%;
+min-width: 20em;
+max-width: 35em;
+box-sizing: border-box;
+flex-grow: 1;
+height: 2.2em;
+color: rgb(0, 0, 0);
+padding: 1em;
+font: inherit;
+border: none;
+border-radius:  8px 8px;
+border-left: none;
+transition: 150ms ease;
+background-color: rgb(219, 217, 215);
+}
+#form-div input:hover{
+ height: 2.5em;
+ border: none;
+}
+#field, #photo-input{
+    color:azure;
+    margin-top: 20px;
+}
+#dropdown{
+  margin-top: 20px;
+  cursor: pointer;  
+}
+#nextbtc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 35px;
+    margin-left:auto;
+    margin-right:auto;
+    border: none;
+    border-radius: 5px;
+    font: inherit;
+    font-size: large;
+    font-style:oblique;
+    font-weight: 900;
+    text-transform: uppercase;
+    height: 2em;
+    width: 5rem;
+    background-color: rgb(196, 181, 181);
+    padding-top: 2px;
+    cursor: pointer;
+}
+#nextbtc:hover{
+background-color: rgb(104, 151, 151);
+color:aliceblue;
+height: 2.2em;
+}
+#submitBtn, #backBtn{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 35px;
+    margin-left:1em;
+    margin-right:1em;
+    border: none;
+    border-radius: 5px;
+    font: inherit;
+    font-size: large;
+    font-style:oblique;
+    font-weight: 900;
+    text-transform: uppercase;
+    height: 2em;
+    width: 5rem;
+    cursor: pointer;
+}
+
+#sel{
+  display: none;
+  color: rgb(221, 55, 55); 
+  padding-left: 11em; 
+}
+
+/*password*/
+#passwordDiv{
+display: none;
+}
+
+/*error tags*/
+#error1, 
+#error2, 
+#error3, 
+#error4, 
+#error5, #error6{
+    padding: 0px;
+    color: #d41b1b;
+    font-weight: bold;
+    margin-right: auto;
+}
+.error{
+    color: #d41b1b;
+    font-weight: bold;
+    border: 1px solid #b00020;
+}
+
+/*professionals buttons*/
+.workerBtn, .worker-btn{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #3498db;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    border-radius: 6px;
+    outline: none;
+    min-width: 120px;
+    margin-top: 1em;
+    cursor: pointer;
+}
+.worker-btn-container{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    max-width: 48em;
+    min-width: 120px ;
+    z-index: 1000;
+    gap: 10px;
+}
+.profi-container{
+    position: fixed;
+    top: 10em;
+    left: 2rem;
+}
+.now-displaying-div{
+    position:relative;
+    border: 2px solid;
+    border-radius: 4px;
+    margin-bottom: 0.4rem;
+    width: 20em;
+    height:15em;
+}
+.now-displaying-text-div{
+    word-wrap: break-word;
+    margin-top: 4em;
+    overflow-wrap: break-word;
+}
+.now-displaying-text{
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+.container{
+    margin: auto;
+    width: 5em;
+    border: 2px solid;
+    border-radius: 25px;
+}
+.bi-person-fill{
+    font-size: 60px;
+}
+
+.loginDiv{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+.loginDiv{
+    display: none;
+}
+
+#loginEmail, #loginPassword{
+    margin: 5px;
+}
+#loginLink{
+    color: blue;
+
+}
+.loginBtn{
+    margin-top: 12px;
+    height: 2em;
+    width: 3rem;
+    border-radius: 6px;
+    cursor: pointer;
+    color: blue;
+    background-color: rgb(230, 213, 213);
+}
+.loginText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 14px;
+    padding-top: 25px;
+}
+
+/*map*/
+
+#map{
+    height: 400px;
+    width: 500px;
+    height: 600px;
+    max-width: 1200px;
+    border-radius: 20px;
+    margin: auto;
+    display: block;
+
+}
+
+.map-div{
+    display: none;
+}
+
+@media(max-width: 600px){
+#map{
+    height: 300px;
+    max-width: 90%;
+}
+}
+@media(max-width: 768px){ /* iPad portrait */
+    .app-name{
+        font-size: 2em;
+    }
+    .artisan-room-btn, .service-btn{
+        width: 80%; /* instead of fixed 25em */
+        height: 4em;
+    }
+    #form-div input{
+        min-width: 80%;
+        max-width: 90%;
+    }
+}
+
+@media(max-width: 480px){ /* small phones */
+    .app-name{
+        font-size: 1.5em;
+    }
+    .hammer-open-page{
+        width: 80vw;
+        max-height: 50vh;
+    }
+    .artisan-room-btn, .service-btn{
+        width: 90%;
+        height: 3.5em;
+    }
+        .app-name-form {
+        font-size: 1.2em;
+    }
+    .app-name-container{
+    position: sticky;   /* keeps it near top while allowing flow */
+    top: 1rem;          /* distance from top */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 10;  
+    }
+     #form-div input {
+        font-size: 0.85rem;
+    }
+    #map {
+        height: 300px;
+    }
+}
