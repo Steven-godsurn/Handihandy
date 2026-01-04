@@ -34,7 +34,7 @@ const body = document.body;
 
 artisanBtn.addEventListener("click", () => {
  window.location.href = "formpage.html?type=artisan"
-    
+   
 })
 
 
